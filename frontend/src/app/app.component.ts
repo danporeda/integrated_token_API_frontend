@@ -90,6 +90,7 @@ export class AppComponent {
       console.log('Transaction hash: ' + result.result);
       this.txHash = result.result;
     });
-    this.updateTokenInfo();
+    if (!this.userWallet) return;
+    this.updateTokenInfo(this.userWallet.address);
   }
 }
